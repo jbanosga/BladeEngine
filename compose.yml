@@ -1,0 +1,10 @@
+services:
+  game-project:
+    image: game-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - action: rebuild
+          path: .
