@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 project(SplitCrit)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_EXE_LINKER_FLAGS "-static")
+set(CMAKE_CXX_STANDARD 17)
 
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(SDL2 REQUIRED sdl2)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
-add_subdirectory(deps/SDL EXCLUDE_FROM_ALL)
+include_directories(${SDL2_INCLUDE_DIRS})
 
 add_executable(SplitCrit ./src/main.cpp)
 
-target_link_libraries(SplitCrit PRIVATE SDL3::SDL3)
+target_link_libraries(SplitCrit ${SDL2_LIBRARIES})
+
+target_compile_options(SplitCrit PRIVATE ${SDL2_CFLAGS_OTHER})
