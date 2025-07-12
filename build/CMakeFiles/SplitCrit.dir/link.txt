@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/SplitCrit.dir/src/main.cpp.o -o SplitCrit  -lSDL2 
