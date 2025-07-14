@@ -1,0 +1,23 @@
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/SDL_egl.c.o: \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/SDL_egl.c \
+ /usr/include/stdc-predef.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/SDL_internal.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/SDL_sysvideo.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_vulkan.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_stdinc.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_error.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_video.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_begin_code.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_close_code.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/SDL_surface_c.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/SDL_blit.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/SDL_egl_c.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_egl.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_platform_defines.h \
+ /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
+ /usr/include/KHR/khrplatform.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/stdint.h \
+ /usr/include/EGL/eglext.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_opengl.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_platform.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_opengl_glext.h

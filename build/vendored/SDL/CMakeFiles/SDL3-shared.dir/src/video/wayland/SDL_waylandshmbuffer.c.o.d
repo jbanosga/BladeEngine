@@ -1,0 +1,120 @@
+vendored/SDL/CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandshmbuffer.c.o: \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/SDL_waylandshmbuffer.c \
+ /usr/include/stdc-predef.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/SDL_internal.h \
+ /usr/include/errno.h /usr/include/features.h \
+ /usr/include/arm-linux-gnueabihf/bits/errno.h /usr/include/linux/errno.h \
+ /usr/lib/linux/uapi/arm/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/error_t.h \
+ /usr/include/fcntl.h /usr/include/arm-linux-gnueabihf/bits/types.h \
+ /usr/include/arm-linux-gnueabihf/bits/fcntl.h \
+ /usr/include/arm-linux-gnueabihf/bits/fcntl-linux.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/struct_iovec.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/stddef.h \
+ /usr/include/linux/falloc.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/struct_timespec.h \
+ /usr/include/arm-linux-gnueabihf/bits/stat.h \
+ /usr/include/arm-linux-gnueabihf/bits/struct_stat.h \
+ /usr/include/arm-linux-gnueabihf/bits/endian.h \
+ /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
+ /usr/include/arm-linux-gnueabihf/bits/struct_stat_time64_helper.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/limits.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/syslimits.h \
+ /usr/include/limits.h \
+ /usr/include/arm-linux-gnueabihf/bits/libc-header-start.h \
+ /usr/include/arm-linux-gnueabihf/bits/posix1_lim.h \
+ /usr/include/arm-linux-gnueabihf/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/arm-linux-gnueabihf/bits/pthread_stack_min-dynamic.h \
+ /usr/include/arm-linux-gnueabihf/bits/posix2_lim.h \
+ /usr/include/arm-linux-gnueabihf/bits/xopen_lim.h \
+ /usr/include/arm-linux-gnueabihf/bits/uio_lim.h /usr/include/signal.h \
+ /usr/include/arm-linux-gnueabihf/bits/signum-generic.h \
+ /usr/include/arm-linux-gnueabihf/bits/signum-arch.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/sig_atomic_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/sigset_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/siginfo_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__sigval_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/siginfo-arch.h \
+ /usr/include/arm-linux-gnueabihf/bits/siginfo-consts.h \
+ /usr/include/arm-linux-gnueabihf/bits/siginfo-consts-arch.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/sigval_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/sigevent_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigevent-consts.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigaction.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigcontext.h \
+ /usr/lib/linux/uapi/arm/asm/sigcontext.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/stack_t.h \
+ /usr/include/arm-linux-gnueabihf/sys/ucontext.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigstack.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigstksz.h /usr/include/unistd.h \
+ /usr/include/arm-linux-gnueabihf/bits/posix_opt.h \
+ /usr/include/arm-linux-gnueabihf/bits/environments.h \
+ /usr/include/arm-linux-gnueabihf/bits/confname.h \
+ /usr/include/arm-linux-gnueabihf/bits/getopt_posix.h \
+ /usr/include/arm-linux-gnueabihf/bits/getopt_core.h \
+ /usr/include/arm-linux-gnueabihf/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h \
+ /usr/include/arm-linux-gnueabihf/bits/ss_flags.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/struct_sigstack.h \
+ /usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h \
+ /usr/include/arm-linux-gnueabihf/bits/sigthread.h \
+ /usr/include/arm-linux-gnueabihf/bits/types/__sigset_t.h \
+ /usr/include/arm-linux-gnueabihf/bits/signal_ext.h \
+ /usr/include/arm-linux-gnueabihf/sys/mman.h \
+ /usr/include/arm-linux-gnueabihf/bits/mman.h \
+ /usr/include/arm-linux-gnueabihf/bits/mman-map-flags-generic.h \
+ /usr/include/arm-linux-gnueabihf/bits/mman-linux.h \
+ /usr/include/arm-linux-gnueabihf/bits/mman-shared.h \
+ /usr/include/arm-linux-gnueabihf/bits/mman_ext.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/SDL_waylandshmbuffer.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/SDL_waylandvideo.h \
+ /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
+ /usr/include/KHR/khrplatform.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/stdint.h \
+ /usr/include/wayland-util.h /usr/include/math.h /usr/include/inttypes.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/stdarg.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/../SDL_sysvideo.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_vulkan.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_stdinc.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_error.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_video.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_begin_code.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/include/SDL3/SDL_close_code.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/../SDL_surface_c.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/../SDL_blit.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/../../core/linux/SDL_dbus.h \
+ /usr/include/dbus-1.0/dbus/dbus.h \
+ /usr/lib/arm-linux-gnueabihf/dbus-1.0/include/dbus/dbus-arch-deps.h \
+ /usr/include/dbus-1.0/dbus/dbus-macros.h \
+ /usr/include/dbus-1.0/dbus/dbus-address.h \
+ /usr/include/dbus-1.0/dbus/dbus-types.h \
+ /usr/include/dbus-1.0/dbus/dbus-errors.h \
+ /usr/include/dbus-1.0/dbus/dbus-protocol.h \
+ /usr/include/dbus-1.0/dbus/dbus-bus.h \
+ /usr/include/dbus-1.0/dbus/dbus-connection.h \
+ /usr/include/dbus-1.0/dbus/dbus-memory.h \
+ /usr/include/dbus-1.0/dbus/dbus-message.h \
+ /usr/include/dbus-1.0/dbus/dbus-shared.h \
+ /usr/include/dbus-1.0/dbus/dbus-misc.h \
+ /usr/include/dbus-1.0/dbus/dbus-pending-call.h \
+ /usr/include/dbus-1.0/dbus/dbus-server.h \
+ /usr/include/dbus-1.0/dbus/dbus-signature.h \
+ /usr/include/dbus-1.0/dbus/dbus-syntax.h \
+ /usr/include/dbus-1.0/dbus/dbus-threads.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/../../core/linux/SDL_ime.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/SDL_waylanddyn.h \
+ /usr/include/wayland-cursor.h /usr/include/xkbcommon/xkbcommon.h \
+ /usr/include/stdio.h /usr/include/xkbcommon/xkbcommon-names.h \
+ /usr/include/xkbcommon/xkbcommon-keysyms.h \
+ /usr/include/xkbcommon/xkbcommon-compat.h \
+ /usr/include/xkbcommon/xkbcommon-compose.h \
+ /usr/include/wayland-client-core.h /usr/include/wayland-util.h \
+ /usr/include/wayland-version.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/vendored/SDL/src/video/wayland/SDL_waylandsym.h \
+ /home/jbanosga/Desktop/Dev/splitRPG/build/vendored/SDL/wayland-generated-protocols/wayland-client-protocol.h \
+ /usr/include/wayland-client.h /usr/include/wayland-client-core.h \
+ /usr/include/wayland-client-protocol.h /usr/include/wayland-egl.h \
+ /usr/include/wayland-egl-core.h /usr/include/libdecor-0/libdecor.h \
+ /usr/lib/gcc/arm-linux-gnueabihf/12/include/stdbool.h
