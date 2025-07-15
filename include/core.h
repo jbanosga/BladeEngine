@@ -1,5 +1,5 @@
 #ifndef __CORE_H__
-#define __CORE_H__ 1
+#define __CORE_H__
 
 class Core 
 {

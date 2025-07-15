@@ -1,3 +1,0 @@
-/home/jbanosga/Desktop/Dev/splitRPG/build/CMakeFiles/SplitCrit.dir
-/home/jbanosga/Desktop/Dev/splitRPG/build/CMakeFiles/edit_cache.dir
-/home/jbanosga/Desktop/Dev/splitRPG/build/CMakeFiles/rebuild_cache.dir
