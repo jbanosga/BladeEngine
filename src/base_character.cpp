@@ -7,10 +7,6 @@ BaseCharacter::BaseCharacter()
     character_body_ = nullptr;
 }
 
-BaseCharacter::BaseCharacter(float pos_x, float pos_y, float width, float height)
-{
-    
-}
 
 BaseCharacter::~BaseCharacter()
 {

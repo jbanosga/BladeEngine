@@ -1,11 +1,22 @@
 #include "core.h"
+#include <SDL3/SDL_render.h>
 
-Core::Core()
+Core* Core::GetCoreInstance()
 {
+    if (core_instance_ == nullptr)
+    {
+        core_instance_ = new Core();
+    }
 
+    return core_instance_;
 }
 
-Core::~Core()
+void Core::SetRenderer(SDL_Renderer* r)
 {
-    
+    renderer_ = r;
+}
+
+SDL_Renderer* Core::GetRenderer()
+{
+    return renderer_;
 }

@@ -7,12 +7,10 @@ class BaseCharacter
 {
 public:
     BaseCharacter();
-    BaseCharacter(float pos_x, float pos_y, float width, float height);
     ~BaseCharacter();
 
 protected:
     SDL_FRect* character_body_;
-    
-}
+};
 
-#endif;
+#endif
