@@ -1,5 +1,14 @@
 #include "core.h"
+#include "base_character.h"
+
 #include <SDL3/SDL_render.h>
+
+Core* Core::core_instance_ = nullptr;
+
+Core::~Core()
+{
+    character_list_.clear();
+}
 
 Core* Core::GetCoreInstance()
 {
@@ -11,12 +20,24 @@ Core* Core::GetCoreInstance()
     return core_instance_;
 }
 
-void Core::SetRenderer(SDL_Renderer* r)
+void Core::Initialize()
 {
-    renderer_ = r;
+    BaseCharacter* aux_char = new BaseCharacter();
+    aux_char->Init();
+
+    character_list_.push_back(aux_char);
 }
 
-SDL_Renderer* Core::GetRenderer()
+void Core::ActionLoop()
 {
-    return renderer_;
+    
+}
+
+void Core::DrawLoop(SDL_Renderer* renderer)
+{
+    for (const auto& character : character_list_)
+    {
+        SDL_SetRenderDrawColor(renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
+        SDL_RenderFillRect(renderer, character->GetCharacterBody());
+    }
 }

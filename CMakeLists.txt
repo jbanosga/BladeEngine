@@ -16,7 +16,8 @@ else()
     find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3-shared)
 endif()
 
-include_directories(include)
-add_executable(SplitCrit ./src/main.cpp)
+include_directories(${CMAKE_SOURCE_DIR}/include)
+file(GLOB_RECURSE SOURCES ${CMAKE_SOURCE_DIR}/src/*.cpp)
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_link_libraries(SplitCrit PRIVATE SDL3::SDL3)
