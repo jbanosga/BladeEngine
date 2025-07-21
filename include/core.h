@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include <SDL3/SDL_events.h>
+
 class BaseCharacter;
 class SDL_Renderer;
 
@@ -13,8 +15,9 @@ public:
     static Core* GetCoreInstance();
 
     void Initialize();
-    void ActionLoop();
-    void DrawLoop(SDL_Renderer* renderer);
+    void HandleInput(SDL_Event* event);
+    void Update();
+    void Draw(SDL_Renderer* renderer);
 
 private:
     Core() {}

@@ -32,7 +32,31 @@ SDL_FRect* BaseCharacter::GetCharacterBody()
     return character_body_;
 }
 
-void BaseCharacter::DrawBody(SDL_Renderer* r)
+void BaseCharacter::Handle(SDL_Keycode input)
 {
-    
+
+    switch (input)
+    {
+    case SDL_SCANCODE_W:
+        break;
+    case SDL_SCANCODE_S:
+        break;
+    case SDL_SCANCODE_A:
+        break;
+    case SDL_SCANCODE_D:
+        break;
+    default:
+        break;
+    }
 }
+
+void BaseCharacter::Update(float delta_time)
+{
+
+}
+
+void BaseCharacter::Draw()
+{
+
+}
+

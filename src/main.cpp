@@ -39,23 +39,21 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         return SDL_APP_SUCCESS;
     }
 
+    Core::GetCoreInstance()->HandleInput(event);
 
-    // Check mode UI/Player
-    // Player check movement/combat
     return SDL_APP_CONTINUE;
 }
 
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-
     // LOGIC LOOP
-    Core::GetCoreInstance()->ActionLoop();
+    Core::GetCoreInstance()->Update();
 
     // DRAW LOOP
     SDL_SetRenderDrawColor(renderer, 33, 33, 33, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(renderer);
 
-    Core::GetCoreInstance()->DrawLoop(renderer);
+    Core::GetCoreInstance()->Draw(renderer);
 
     SDL_RenderPresent(renderer);
     
