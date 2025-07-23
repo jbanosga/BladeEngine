@@ -2,10 +2,9 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 
-#include "core.h"
-#include "base_character.h"
-
 #include <vector>
+
+#include "core.h"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480

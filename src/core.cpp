@@ -1,5 +1,6 @@
 #include "core.h"
 #include "base_character.h"
+#include "player_character.h"
 
 #include <SDL3/SDL_render.h>
 
@@ -23,7 +24,7 @@ Core* Core::GetCoreInstance()
 
 void Core::Initialize()
 {
-    BaseCharacter* aux_char = new BaseCharacter();
+    PlayerCharacter* aux_char = new PlayerCharacter();
     aux_char->Init();
 
     character_list_.push_back(aux_char);

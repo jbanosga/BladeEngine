@@ -1,26 +1,19 @@
 #ifndef __BASE_CHARACTER_H__
 #define __BASE_CHARACTER_H__
 
-#include <SDL3/SDL_keycode.h>
-
-class SDL_FRect;
+#include "common_def.h"
 
 class BaseCharacter
 {
 public:
-    BaseCharacter();
-    ~BaseCharacter();
-
-    void Init();
-    SDL_FRect* GetCharacterBody();
-
-    void Handle(SDL_Keycode input);
-    void Update(float delta_time);
-    void Draw();
+    virtual void Init() = 0;
+    virtual void Handle(uint32_t input) = 0;
+    virtual void Update(double delta_time) = 0;
+    virtual void Draw(class SDL_Renderer* r) = 0;
+    virtual class SDL_FRect* GetCharacterBody() = 0;
 
 protected:
-    SDL_FRect* character_body_;
-
+    class SDL_FRect* character_body_ = nullptr;
 };
 
 #endif
