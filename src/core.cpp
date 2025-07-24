@@ -26,28 +26,34 @@ void Core::Initialize()
 {
     PlayerCharacter* aux_char = new PlayerCharacter();
     aux_char->Init();
+    aux_char->SetSpeed(1.0f);
 
     character_list_.push_back(aux_char);
 }
 
 void Core::HandleInput(SDL_Event* event)
 {
-    for (const auto& character: character_list_)
+    if (event->type == SDL_EVENT_KEY_DOWN)
     {
-        character->Update(event->key.scancode);
+        for (const auto& character: character_list_)
+        {
+            character->Handle(event->key.scancode);
+        }
     }
 }
 
-void Core::Update()
-{
-    
+void Core::Update(double delta_time)
+{   
+    for (const auto& character: character_list_)
+    {
+        character->Update(delta_time);
+    }
 }
 
 void Core::Draw(SDL_Renderer* renderer)
 {
     for (const auto& character : character_list_)
     {
-        SDL_SetRenderDrawColor(renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
-        SDL_RenderFillRect(renderer, character->GetCharacterBody());
+        character->Draw(renderer);
     }
 }

@@ -8,6 +8,7 @@
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
+#define LAZY_DELTA_TIME 0.01666
 
 static SDL_Window* window = nullptr;
 static SDL_Renderer* renderer = nullptr;
@@ -46,7 +47,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
     // LOGIC LOOP
-    Core::GetCoreInstance()->Update();
+    Core::GetCoreInstance()->Update(LAZY_DELTA_TIME);
 
     // DRAW LOOP
     SDL_SetRenderDrawColor(renderer, 33, 33, 33, SDL_ALPHA_OPAQUE);

@@ -16,7 +16,7 @@ public:
 
     void Initialize();
     void HandleInput(SDL_Event* event);
-    void Update(/*double delta_time*/);
+    void Update(double delta_time);
     void Draw(SDL_Renderer* renderer);
 
 private:
