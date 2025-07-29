@@ -7,6 +7,7 @@ class BaseCharacter
 {
 public:
     virtual void Init() = 0;
+    virtual void ClearActions() = 0;
     virtual void Handle(uint32_t input) = 0;
     virtual void Update(double delta_time) = 0;
     virtual void Draw(class SDL_Renderer* r) = 0;

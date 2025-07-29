@@ -7,7 +7,8 @@
 
 PlayerCharacter::PlayerCharacter()
 {
-    character_body_ = nullptr;
+    character_body_ = new SDL_FRect();
+    transform_ = new Transform();
 }
 
 PlayerCharacter::~PlayerCharacter()
@@ -32,21 +33,23 @@ void PlayerCharacter::Init()
 
 void PlayerCharacter::Init(float pos_x, float pos_y, float pos_z)
 {
-    transform_ = new Transform();
     transform_->position_.x = pos_x;
     transform_->position_.y = pos_y;
     transform_->position_.z = pos_z;
-
-    character_body_ = new SDL_FRect();
+    
     UpdateBody();
 
     speed_ = 0.0f;
     direction_ = glm::vec3(0.0f);
 }
 
-void PlayerCharacter::Handle(uint32_t input)
+void PlayerCharacter::ClearActions()
 {
     direction_ = glm::vec3(0.0f);
+}
+
+void PlayerCharacter::Handle(uint32_t input)
+{
     switch (input)
     {
     case SDL_SCANCODE_W:
@@ -55,14 +58,15 @@ void PlayerCharacter::Handle(uint32_t input)
     case SDL_SCANCODE_S:
         direction_.y = 1.0f;
         break;
+    }
+
+    switch (input)
+    {
     case SDL_SCANCODE_A:
         direction_.x = -1.0f;
         break;
     case SDL_SCANCODE_D:
         direction_.x = 1.0f;
-        break;
-    default:
-        direction_ = glm::vec3(0.0f);
         break;
     }
 }

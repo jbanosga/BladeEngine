@@ -33,6 +33,11 @@ void Core::Initialize()
 
 void Core::HandleInput(SDL_Event* event)
 {
+    for (const auto& character: character_list_)
+    {
+        character->ClearActions();
+    }
+
     if (event->type == SDL_EVENT_KEY_DOWN)
     {
         for (const auto& character: character_list_)

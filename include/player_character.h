@@ -12,6 +12,7 @@ public:
     
     virtual void Init() override;
     void Init(float pos_x, float pos_y, float pos_z = 0.0f);
+    virtual void ClearActions() override;
     virtual void Handle(uint32_t input) override;
     virtual void Update(double delta_time) override;
     virtual void Draw(SDL_Renderer* r) override;  
