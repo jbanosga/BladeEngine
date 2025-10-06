@@ -1,9 +1,16 @@
-#ifndef __BASE_CHARACTER_H__
-#define __BASE_CHARACTER_H__
+#ifndef BASE_RECT_H
+#define BASE_RECT_H
 
 #include "common_def.h"
 
-class BaseCharacter
+struct BasicColor
+{
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+};
+
+class BaseRect
 {
 public:
     virtual void Init() = 0;
@@ -13,10 +20,13 @@ public:
     virtual void Draw(class SDL_Renderer* r) = 0;
     virtual class SDL_FRect* GetCharacterBody() = 0;
     virtual class Transform* GetCharacterTransform() = 0;
-    
+    virtual BasicColor GetRectColor() = 0;
+    virtual void SetRectColor(uint8_t r, uint8_t g, uint8_t b) = 0;
+
 protected:
     class SDL_FRect* character_body_ = nullptr;
     class Transform* transform_ = nullptr;
+    BasicColor rect_color_;
 };
 
 #endif

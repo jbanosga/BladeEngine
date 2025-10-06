@@ -2,17 +2,12 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 
-#include <vector>
-
 #include "core.h"
 
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 480
-#define LAZY_DELTA_TIME 0.01666
+
 
 static SDL_Window* window = nullptr;
 static SDL_Renderer* renderer = nullptr;
-
 
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv) 
@@ -39,7 +34,7 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
         return SDL_APP_SUCCESS;
     }
 
-    Core::GetCoreInstance()->HandleInput(event);
+    //Core::GetCoreInstance()->HandleInput(event);
 
     return SDL_APP_CONTINUE;
 }

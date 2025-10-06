@@ -37,10 +37,11 @@ void PlayerCharacter::Init(float pos_x, float pos_y, float pos_z)
     transform_->position_.y = pos_y;
     transform_->position_.z = pos_z;
     
-    UpdateBody();
-
     speed_ = 0.0f;
     direction_ = glm::vec3(0.0f);
+
+    rect_color_ = { 0, 0, 255 };
+    UpdateBody();
 }
 
 void PlayerCharacter::ClearActions()
@@ -79,7 +80,7 @@ void PlayerCharacter::Update(double delta_time)
 
 void PlayerCharacter::Draw(SDL_Renderer* r)
 {
-    SDL_SetRenderDrawColor(r, 0, 0, 255, SDL_ALPHA_OPAQUE);
+    SDL_SetRenderDrawColor(r, rect_color_.r, rect_color_.g, rect_color_.b, SDL_ALPHA_OPAQUE);
     SDL_RenderFillRect(r, character_body_);
 }
 
@@ -105,8 +106,20 @@ float PlayerCharacter::GetSpeed()
 
 void PlayerCharacter::UpdateBody()
 {
-    character_body_->w = 100.0f * transform_->scale_.x;
-    character_body_->h = 100.0f * transform_->scale_.y;
+    character_body_->w = 10.0f * transform_->scale_.x;
+    character_body_->h = 10.0f * transform_->scale_.y;
     character_body_->x = transform_->position_.x;
     character_body_->y = transform_->position_.y;
+}
+
+BasicColor PlayerCharacter::GetRectColor()
+{
+    return rect_color_;
+}
+
+void PlayerCharacter::SetRectColor(uint8_t r, uint8_t g, uint8_t b)
+{
+   rect_color_.r = r;
+   rect_color_.g = g;
+   rect_color_.b = b;
 }

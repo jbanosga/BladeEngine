@@ -1,10 +1,10 @@
-#ifndef __PLAYER_CHARACTER_H__
-#define __PLAYER_CHARACTER_H__
+#ifndef PLAYER_CHARACTER_H
+#define PLAYER_CHARACTER_H
 
-#include "base_character.h"
+#include "base_rect.h"
 #include <glm/ext/vector_float3.hpp>
 
-class PlayerCharacter : public BaseCharacter
+class PlayerCharacter : public BaseRect
 {
 public:
     PlayerCharacter();
@@ -19,6 +19,8 @@ public:
     
     virtual SDL_FRect* GetCharacterBody() override;
     virtual Transform* GetCharacterTransform() override;
+    virtual BasicColor GetRectColor() override;
+    virtual void SetRectColor(uint8_t r, uint8_t g, uint8_t b) override;
 
     void SetSpeed(float s);
     float GetSpeed();

@@ -1,5 +1,5 @@
-#ifndef __COMMON_DEF_H__
-#define __COMMON_DEF_H__
+#ifndef COMMON_DEF_H
+#define COMMON_DEF_H
 
 #include <cstdint>
 
