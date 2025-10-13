@@ -13,20 +13,18 @@ struct BasicColor
 class BaseRect
 {
 public:
-    virtual void Init() = 0;
-    virtual void ClearActions() = 0;
-    virtual void Handle(uint32_t input) = 0;
-    virtual void Update(double delta_time) = 0;
-    virtual void Draw(class SDL_Renderer* r) = 0;
-    virtual class SDL_FRect* GetCharacterBody() = 0;
-    virtual class Transform* GetCharacterTransform() = 0;
-    virtual BasicColor GetRectColor() = 0;
-    virtual void SetRectColor(uint8_t r, uint8_t g, uint8_t b) = 0;
+    virtual void Init() {}
+    virtual void Update(double delta_time) {} 
+    virtual void Draw(class SDL_Renderer* r);
+    virtual inline class SDL_FRect* GetBody() { return body_; }
+    virtual inline class Transform* GetTransform() { return transform_; }
+    virtual inline BasicColor GetRectColor() { return body_color_; } 
+    virtual inline void SetRectColor(uint8_t r, uint8_t g, uint8_t b) { body_color_.r = r; body_color_.g = g; body_color_.b; }
 
 protected:
-    class SDL_FRect* character_body_ = nullptr;
+    class SDL_FRect* body_ = nullptr;
     class Transform* transform_ = nullptr;
-    BasicColor rect_color_;
+    BasicColor body_color_;
 };
 
 #endif
