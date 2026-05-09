@@ -1,29 +1,25 @@
-#ifndef __CORE_H__
-#define __CORE_H__
+#pragma once
 
-#include <vector>
+#include <memory>
+namespace Blade {
 
-#include <SDL3/SDL_events.h>
+    class Window;
 
-class BaseCharacter;
-class SDL_Renderer;
+    class Core
+    {
+    public:
+        Core(Core&) = delete;
+        Core& operator=(const Core&) = delete;
 
-class Core 
-{
-public:
-    ~Core();
-    static Core* GetCoreInstance();
+        static Core& GetInstance();
+        void Initialize();
+        void Shutdown();
 
-    void Initialize();
-    void HandleInput(SDL_Event* event);
-    void Update(double delta_time);
-    void Draw(SDL_Renderer* renderer);
+    private:
+        Core() {}
+        ~Core() {}
 
-private:
-    Core() {}
+        std::unique_ptr<Blade::Window> pMainWin_;
+    };
 
-    static Core* core_instance_;
-    std::vector<BaseCharacter*> character_list_;
-};
-
-#endif
+}

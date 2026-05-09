@@ -1,64 +1,23 @@
 #include "core.h"
-#include "base_character.h"
-#include "player_character.h"
+#include "renderer/window.h"
 
-#include <SDL3/SDL_render.h>
+namespace Blade {
 
-
-Core* Core::core_instance_ = nullptr;
-
-Core::~Core()
-{
-    character_list_.clear();
-}
-
-Core* Core::GetCoreInstance()
-{
-    if (core_instance_ == nullptr)
+    Core& Core::GetInstance()
     {
-        core_instance_ = new Core();
+        static Core instance;
+        return instance;
     }
 
-    return core_instance_;
-}
-
-void Core::Initialize()
-{
-    PlayerCharacter* aux_char = new PlayerCharacter();
-    aux_char->Init();
-    aux_char->SetSpeed(1.0f);
-
-    character_list_.push_back(aux_char);
-}
-
-void Core::HandleInput(SDL_Event* event)
-{
-    for (const auto& character: character_list_)
+    void Core::Initialize()
     {
-        character->ClearActions();
+        pMainWin_ = std::make_unique<Blade::Window>();
+        pMainWin_->Initialize();
     }
 
-    if (event->type == SDL_EVENT_KEY_DOWN)
+    void Core::Shutdown()
     {
-        for (const auto& character: character_list_)
-        {
-            character->Handle(event->key.scancode);
-        }
+        pMainWin_->Shutdown();
     }
-}
 
-void Core::Update(double delta_time)
-{   
-    for (const auto& character: character_list_)
-    {
-        character->Update(delta_time);
-    }
-}
-
-void Core::Draw(SDL_Renderer* renderer)
-{
-    for (const auto& character : character_list_)
-    {
-        character->Draw(renderer);
-    }
 }
