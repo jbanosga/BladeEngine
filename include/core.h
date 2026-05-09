@@ -16,8 +16,8 @@ namespace Blade {
         void Shutdown();
 
     private:
-        Core() {}
-        ~Core() {}
+        Core() = default;
+        ~Core() = default;
 
         std::unique_ptr<Blade::Window> pMainWin_;
     };

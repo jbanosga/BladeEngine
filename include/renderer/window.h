@@ -1,32 +1,37 @@
 #pragma once
 
-#include <SDL3/SDL_oldnames.h>
-#include <SDL3/SDL_video.h>
 #include <memory>
 
+struct SDL_Window;
 
 namespace Blade {
 
-    struct WindowDeleter
-    {
-        void operator()(struct SDL_Window* w) const { SDL_DestroyWindow(w); }
-    };
-    using UniqueWindow = std::unique_ptr<struct SDL_Window, WindowDeleter>;
+    struct WindowDeleter { void operator()(SDL_Window* w) const; };
+    using UniqueWindow = std::unique_ptr<SDL_Window, WindowDeleter>;
+
+    struct ContextDeleter { void operator()(void* c) const; };
+    using UniqueContext = std::unique_ptr<void, ContextDeleter>;
 
     class Window
     {
     public:
 
-        Window() : width_(600), height_(600) {}
+        Window() : width_(640), height_(480) {}
         Window(const Window&) = delete;
         Window& operator=(const Window&) = delete;
         ~Window() {}
 
-        bool Initialize();
-        bool Shutdown();
+        void Initialize();
+        void Initialize(int w, int h);
+        void Shutdown();
+
+        void Render();
+
+        [[nodiscard]] SDL_Window* GetRawWindow() const { return  windowHandle_.get(); }
 
     private:
         UniqueWindow windowHandle_;
+        UniqueContext contextHandle_;
 
         int width_;
         int height_;

@@ -1,6 +1,7 @@
 .vscode/
 build/
-vendored/
+./compile_commands.json
+.cache/
 
 # Prerequisites
 *.d

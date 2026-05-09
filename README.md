@@ -2,8 +2,6 @@
 
 # Install dependencies
 # # SDL
-Ubuntu dependencies at : https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-
     cd modules/SDL
     cmake -S . -B build
     cmake --build build
