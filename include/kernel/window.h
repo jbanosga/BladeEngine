@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <atomic>
 
 struct SDL_Window;
 
@@ -16,7 +17,7 @@ namespace Blade {
     {
     public:
 
-        Window() : width_(640), height_(480) {}
+        Window() : width_(640), height_(480), isWindowOpen_(true) {}
         Window(const Window&) = delete;
         Window& operator=(const Window&) = delete;
         ~Window() {}
@@ -25,15 +26,22 @@ namespace Blade {
         void Initialize(int w, int h);
         void Shutdown();
 
-        void Render();
+        void EventProcess();
+        void PreRender();
+        void Render(double alphaTime);
+        void PostRender();
 
+        inline bool IsRunning() const { return isWindowOpen_.load(std::memory_order_relaxed); }
         [[nodiscard]] SDL_Window* GetRawWindow() const { return  windowHandle_.get(); }
 
     private:
+        void HandleWindowEvent(const int& key);
+
         UniqueWindow windowHandle_;
         UniqueContext contextHandle_;
 
         int width_;
         int height_;
+        std::atomic<bool> isWindowOpen_;
     };
 }

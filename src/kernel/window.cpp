@@ -1,10 +1,11 @@
-#include "renderer/window.h"
+#include "kernel/window.h"
 #include "utils/logger.h"
 
 #include <SDL2/SDL.h>
 #include <SDL_events.h>
 #include <SDL_video.h>
 #include <GL/glew.h>
+#include <atomic>
 
 namespace Blade {
 
@@ -60,22 +61,32 @@ namespace Blade {
         SDL_QuitSubSystem(SDL_INIT_VIDEO);
     }
 
-    void Window::Render()
+    void Window::HandleWindowEvent(const int& key)
     {
-        bool run = true;
+    }
+
+    void Window::EventProcess()
+    {
         SDL_Event event;
-
-        while (run) {
-            while (SDL_PollEvent(&event))
-            {
-                if (event.type == SDL_QUIT)
-                    run = false;
-            }
-
-            glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-            SDL_GL_SwapWindow(windowHandle_.get());
+        while (SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_QUIT)
+                isWindowOpen_.store(false, std::memory_order_relaxed);
         }
+    }
+
+    void Window::PreRender()
+    {
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    }
+
+    void Window::Render(double alphaTime)
+    {
+    }
+
+    void Window::PostRender()
+    {
+        SDL_GL_SwapWindow(windowHandle_.get());
     }
 }

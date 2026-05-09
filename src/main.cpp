@@ -1,6 +1,4 @@
-#include "core.h"
-
-#define LAZY_DELTA_TIME 0.01666
+#include "kernel/core.h"
 
 int main()
 {

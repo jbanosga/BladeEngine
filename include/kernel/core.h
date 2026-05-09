@@ -19,6 +19,12 @@ namespace Blade {
         Core() = default;
         ~Core() = default;
 
+        void Run();
+        void DoInput();
+        void Update(double deltaTime);
+        void Render(double alphaTime);
+
+
         std::unique_ptr<Blade::Window> pMainWin_;
     };
 
