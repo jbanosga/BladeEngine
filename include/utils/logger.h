@@ -1,9 +1,18 @@
 #pragma once
 
 #include <iostream>
-#define BLADE_LOG_ERROR(ErrorMsg)                                       \
-do                                                                      \
+#include <stdexcept>
+
+#define BLADE_ASSERT(check, msg)                                        \
+if (!check)                                                             \
 {                                                                       \
-    std::cout << "[ERROR] [" << __FILE__ << ":" << __LINE__ << "] - "   \
-                << ErrorMsg << "\n";                                    \
+    std::cerr << "[ERROR] [" << __FILE__ << ":" << __LINE__ << "] - "   \
+                << msg << "\n";                                         \
+    throw  std::runtime_error(msg);                                     \
+}
+
+#define BLADE_LOG(msg)                          \
+do                                              \
+{                                               \
+    std::cout << "[INFO] - " << msg << "\n";    \
 } while(0)

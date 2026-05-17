@@ -28,6 +28,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 # === Include ===
-target_include_directories(${PROJECT_NAME} PRIVATE
+target_include_directories(${PROJECT_NAME} PUBLIC
+    include
     ${CMAKE_SOURCE_DIR}/include
 )

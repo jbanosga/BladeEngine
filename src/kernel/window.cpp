@@ -2,6 +2,7 @@
 #include "utils/logger.h"
 
 #include <SDL2/SDL.h>
+#include <SDL_error.h>
 #include <SDL_events.h>
 #include <SDL_video.h>
 #include <GL/glew.h>
@@ -21,10 +22,8 @@ namespace Blade {
 
     void Window::Initialize()
     {
-        if (!SDL_Init(SDL_INIT_VIDEO))
-        {
-            BLADE_LOG_ERROR("Could not initialize SDL");
-        }
+        //BLADE_ASSERT(SDL_Init(SDL_INIT_VIDEO), std::string(SDL_GetError()));
+        SDL_Init(SDL_INIT_VIDEO);
 
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
@@ -33,19 +32,11 @@ namespace Blade {
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 
         SDL_Window* rawWin = SDL_CreateWindow("Blade Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width_, height_, SDL_WINDOW_OPENGL);
-        if (rawWin == nullptr)
-        {
-            BLADE_LOG_ERROR("Could not create SDL Window");
-            throw stderr;
-        }
+        BLADE_ASSERT(rawWin, "Could not create SDL Window")
         windowHandle_.reset(rawWin);
 
         SDL_GLContext rawContext = SDL_GL_CreateContext(windowHandle_.get());
-        if (!rawContext)
-        {
-            BLADE_LOG_ERROR("Could not creat SDL OpenGl Context");
-            throw stderr;
-        }
+        BLADE_ASSERT(rawContext, "Could not create OpenGL Context")
         contextHandle_.reset(&rawContext);
     }
 
